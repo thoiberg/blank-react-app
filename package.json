@@ -1,0 +1,67 @@
+{
+  "name": "blank-react-app",
+  "version": "1.0.0",
+  "description": "A blank React app preconfigured with webpack and karma",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "karma start",
+    "start": "webpack-dev-server --inline --hot --content-base src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoiberg/blank-react-app.git"
+  },
+  "author": "Tim Hoiberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thoiberg/blank-react-app/issues"
+  },
+  "homepage": "https://github.com/thoiberg/blank-react-app#readme",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-polyfill": "^6.20.0",
+    "react": "^15.4.2",
+    "react-css-modules": "^4.1.0",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.26.1",
+    "enzyme": "^2.7.0",
+    "eslint": "^3.13.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.9.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "inline-source-map": "^0.6.2",
+    "karma": "^1.4.0",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.1",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sinon-chai": "^1.2.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.1",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.3.0",
+    "postcss": "^5.2.10",
+    "postcss-loader": "^1.2.2",
+    "precss": "^1.4.0",
+    "react-addons-test-utils": "^15.4.2",
+    "sass-loader": "^4.1.1",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

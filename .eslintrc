@@ -1,0 +1,29 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        }
+    },
+    "plugins": [
+        "react",
+        "standard",
+        "promise"
+    ],
+    "env": {
+        "mocha": true
+    },
+    "globals": {
+        "document": false,
+        "expect": false,
+        "require": false,
+        "sinon": false
+    },
+    "rules": {
+        "eol-last": 0
+    }
+}
