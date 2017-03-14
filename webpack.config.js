@@ -1,36 +1,46 @@
 const path = require('path')
-const autoprefixer = require('autoprefixer')
-const precss = require('precss')
+const webpack = require('webpack')
 
 module.exports = {
     entry: ['babel-polyfill', './src/index.js'],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loaders: ['babel-loader', 'eslint']
+          use: [
+            'babel-loader',
+            {
+              loader: 'eslint-loader',
+              options: {
+                failOnWarning: false,
+                failOnError: false
+              }
+            }
+          ]
         },
         {
-          test: /\.json$/,
-          loaders: ['json']
-        },
-        {
-          test: /\.scss$/,
+          test: /\.css$/,
           exclude: /node_modules/,
-          loaders: [
-            'style?sourceMap',
-            'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-            'postcss',
-            'sass'
+          use: [
+            {
+              loader: 'style-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                importLoaders: true,
+                localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
+              }
+            },
+            'postcss-loader'
           ]
         }
       ]
-    },
-
-    eslint: {
-      failOnWarning: false,
-      failOnError: false
     },
 
     devServer: {
@@ -38,18 +48,20 @@ module.exports = {
       inline: true
     },
 
+    plugins: [
+      new webpack.NoEmitOnErrorsPlugin()
+    ],
+
     resolve: {
-      root: path.resolve(__dirname, 'src'),
-      extensions: ['', '.js'],
+      modules: [
+        path.resolve(__dirname, 'src'),
+        'node_modules'
+      ],
+      extensions: ['.js'],
       alias: {
         react: path.resolve(__dirname, './node_modules/react'),
         React: path.resolve(__dirname, './node_modules/react')
-      },
-      fallback: path.resolve(__dirname, './node_modules')
-    },
-
-    postcss: () => {
-    return [autoprefixer, precss]
+      }
     },
 
     output: {

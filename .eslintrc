@@ -15,13 +15,13 @@
         "promise"
     ],
     "env": {
-        "mocha": true
+        "mocha": true,
+        "node": true,
+        "browser": true
     },
     "globals": {
-        "document": false,
         "expect": false,
-        "require": false,
-        "sinon": false
+        "sinon": false,
     },
     "rules": {
         "eol-last": 0
